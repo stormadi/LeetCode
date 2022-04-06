@@ -1,18 +1,16 @@
 class Solution {
     public int finalValueAfterOperations(String[] operations) {
         int value = 0;
-        List<String> inList = new ArrayList<>(Arrays.asList(operations));
-        for(String op : inList)
-        {
-            if(op.contains("X++") || op.contains("++X"))
+    	for(int i=0;i<operations.length;i++) {
+    		if(operations[i].charAt(1)=='+')
             {
                 value++;
             }
-            else
+    		else
             {
                 value--;
-            }
-        }
-        return value;
+            }    
+    	}
+    	return value;   
     }
 }

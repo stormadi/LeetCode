@@ -1,27 +1,27 @@
 class BrowserHistory {
-    int currIndex, endIndex;
-    List<String> history;
+    int pos, max;
+    List<String> browser;
     
     public BrowserHistory(String homepage) {
-        currIndex = 0; 
-        endIndex = 0;
-        history = new ArrayList<>();
+        pos = 0; 
+        max = 0;
+        browser = new ArrayList<>();
         visit(homepage);
     }
     
     public void visit(String url) {
-        history.add(currIndex++, url);
-        endIndex = currIndex;
+        browser.add(pos++, url);
+        max = pos;
     }
     
     public String back(int steps) {
-        currIndex = Math.max(1, currIndex - steps);
-	    return history.get(currIndex - 1);
+        pos = Math.max(1, pos - steps);
+	    return browser.get(pos - 1);
     }
     
     public String forward(int steps) {
-        currIndex = Math.min(endIndex, currIndex + steps);
-	    return history.get(currIndex - 1);
+        pos = Math.min(max, pos + steps);
+	    return browser.get(pos - 1);
     }
 }
 

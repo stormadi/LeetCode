@@ -1,8 +1,8 @@
 class Solution {
     public boolean canBeIncreasing(int[] nums) {
         int arr[] = new int[nums.length-1];
-        int count = 0;
-        int k = 0;
+        int count = 0; //to keep count of which index to ignore
+        int k = 0; //to correctly insert in new array
         if(nums.length == 2) return true;
         while(count < nums.length)
         {

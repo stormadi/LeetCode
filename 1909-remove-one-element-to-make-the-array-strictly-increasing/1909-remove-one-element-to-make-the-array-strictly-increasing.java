@@ -3,9 +3,10 @@ class Solution {
         int arr[] = new int[nums.length-1];
         int count = 0; //to keep count of which index to ignore
         int k = 0; //to correctly insert in new array
-        if(nums.length == 2) return true;
-        while(count < nums.length)
+        if(nums.length == 2) return true; //edge case
+        while(count < nums.length) //brute force
         {
+            //loop to copy the given array to our own array of size 1 less than the given array
             for(int i = 0; i < nums.length; i++)
             {
                 if(i == count) continue;
@@ -15,7 +16,8 @@ class Solution {
                     k++;
                 }
             }
-            count++;
+            count++; //increment to correctly track which index to ignore in the next loop
+            //loop to check if valid array is formed or not
             for(int i = 0; i < arr.length-1; i++)
             {
                 if(arr[i] >= arr[i+1])

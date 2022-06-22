@@ -16,7 +16,9 @@ class Solution {
                     k++;
                 }
             }
+            
             count++; //increment to correctly track which index to ignore in the next loop
+            
             //loop to check if valid array is formed or not
             for(int i = 0; i < arr.length-1; i++)
             {

@@ -8,7 +8,6 @@ class Solution {
             if (num1Idx > 0 && nums[num1Idx] == nums[num1Idx - 1]) {
                 continue;
             }
-
             int num2Idx = num1Idx + 1;
             int num3Idx = nums.length - 1;
             while (num2Idx < num3Idx) {

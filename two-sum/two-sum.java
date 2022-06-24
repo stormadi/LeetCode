@@ -1,25 +1,17 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        for(int i = 0; i < nums.length; i++)
+        int arr[] = new int[2];
+        for(int i=0;i<nums.length;i++)
         {
-            arr.add(nums[i]);
-        }
-        int ans[] = new int[2];
-        int b;
-        for(int i = 0; i < nums.length; i++)
-        {
-            b = target - nums[i];
-            if(arr.contains(b))
+            for(int j=i+1;j<nums.length;j++)
             {
-                if(arr.indexOf(b) != i)
-                {
-                    ans[0] = i;
-                    ans[1] = arr.indexOf(b);
-                    break; 
+                if(nums[i]+nums[j]==target){
+                    arr[0]=i;
+                    arr[1]=j;
+                    return arr;
                 }
             }
         }
-        return ans;
+        return null;
     }
 }

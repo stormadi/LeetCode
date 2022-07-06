@@ -27,12 +27,10 @@ class Solution
         {
             return false;
         }
-        if(p.val == q.val)
+        if(p.val != q.val)
         {
-            left = isSameTree(p.left, q.left);
-            right = isSameTree(p.right, q.right);
+            return false;
         }
-        else return false;
-        return left && right;
+        return isSameTree(p.left,q.left) && isSameTree(p.right, q.right);
     }
 }

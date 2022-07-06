@@ -23,7 +23,7 @@ class Solution
         {
             return true;
         }
-        if((p == null && q != null) || (p != null && q == null))
+        if(p == null || q == null)
         {
             return false;
         }

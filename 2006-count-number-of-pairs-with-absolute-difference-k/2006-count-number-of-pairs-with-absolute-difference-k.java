@@ -16,17 +16,10 @@ class Solution
         }
         for(int i = 0; i < nums.length; i++)
         {
-            if(map.containsKey(nums[i] + k))
-            {
-                total += map.get(nums[i] + k);
-            }
             if(map.containsKey(nums[i] - k))
             {
                 total += map.get(nums[i] - k);
             }
-            val = map.get(nums[i]);
-            if(val == 1) map.remove(nums[i]);
-            else map.put(nums[i], --val);
         }
         return total;
     }

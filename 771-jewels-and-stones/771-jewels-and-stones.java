@@ -3,7 +3,7 @@ class Solution
     public int numJewelsInStones(String jewels, String stones)
     {
         int count = 0;
-        HashSet<Character> set = new HashSet<Character>();
+        Set<Character> set = new HashSet<Character>();
         for(int i = 0; i < jewels.length(); i++)
         {
             set.add(jewels.charAt(i));

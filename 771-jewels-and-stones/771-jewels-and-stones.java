@@ -3,22 +3,16 @@ class Solution
     public int numJewelsInStones(String jewels, String stones)
     {
         int count = 0;
-        int val;
-        HashMap<Character, Integer> map = new HashMap<>();
-        for(int i = 0; i < stones.length(); i++)
-        {
-            if(map.containsKey(stones.charAt(i)))
-            {
-                val = map.get(stones.charAt(i));
-                map.put(stones.charAt(i), ++val);
-            }
-            else map.put(stones.charAt(i),1);
-        }
+        HashSet<Character> set = new HashSet<Character>();
         for(int i = 0; i < jewels.length(); i++)
         {
-            if(map.containsKey(jewels.charAt(i)))
+            set.add(jewels.charAt(i));
+        }
+        for(int i = 0; i < stones.length(); i++)
+        {
+            if(set.contains(stones.charAt(i)))
             {
-                count += map.get(jewels.charAt(i));
+                count++;
             }
         }
         return count;

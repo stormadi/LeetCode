@@ -18,7 +18,6 @@ class Solution
     boolean left = true, right = true;
     public boolean isSameTree(TreeNode p, TreeNode q)
     {
-        if(left == false || right == false) return false;
         if(p == null && q == null)
         {
             return true;

@@ -2,8 +2,7 @@ class Solution
 {
     public int maxIncreaseKeepingSkyline(int[][] grid)
     {
-        int[] rowMax = new int[grid.length];
-        int[] colMax = new int[grid.length];
+        int[] rowMax = new int[grid.length], colMax = new int[grid.length];
         int total = 0;
         for(int i = 0; i < grid.length; i++)
         {

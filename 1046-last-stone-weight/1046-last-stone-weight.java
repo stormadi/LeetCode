@@ -8,13 +8,12 @@ class Solution
         {
             max.add(stones[i]);
         }
-        while(max.size() > 1 )
+        while(max.size() != 1 )
         {
             x = max.remove();
             y = max.remove();
-            diff = x - y;
-            if(diff > 0) max.add(diff);
+            max.add(x-y);
         }
-        return max.size() == 0 ? 0 : max.remove();
+        return max.peek();
     }
 }

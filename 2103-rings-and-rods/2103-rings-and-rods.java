@@ -14,9 +14,7 @@ class Solution
             }
             else
             {
-                Set<Character> set = map.get(rings.charAt(i));
-                set.add(rings.charAt(i-1));
-                map.put(rings.charAt(i),set);
+                map.get(rings.charAt(i)).add(rings.charAt(i-1));
             }
         }
         for(Set val : map.values())

@@ -23,6 +23,7 @@ class Solution
         {
             if(head != null) matrix[row][col] = head.val;
             else matrix[row][col] = -1;
+            //place over change boundary length and update move
             if(i == boundary)
             {
                 if(flag == 1)
@@ -53,6 +54,7 @@ class Solution
                         break;
                 }
             }
+            //update row and col
             switch(move)
             {
                 case 'r':

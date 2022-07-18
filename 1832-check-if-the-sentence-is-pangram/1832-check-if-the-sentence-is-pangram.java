@@ -2,21 +2,15 @@ class Solution
 {
     public boolean checkIfPangram(String sentence) 
     {
-        HashMap<Character, Integer> map = new HashMap<>();
-        char al = 'a';
-        for(int i = 0; i < 26; i++)
+        if(sentence.length() < 26) return false;
+        HashSet<Character> set = new HashSet<>();
+        for(char c : sentence.toCharArray())
         {
-            map.put(al, 0);
-            al++;
+            set.add(c);
         }
-        for(int i = 0; i < sentence.length(); i++)
+        for(char c = 'a'; c <= 'z'; c++)
         {
-            int value = map.get(sentence.charAt(i));
-            map.put(sentence.charAt(i), value+1);
-        }
-        for(char alp = 'a'; alp <= 'z'; alp++)
-        {
-            if(map.get(alp) == 0) return false;
+            if(!set.contains(c)) return false;
         }
         return true;
     }

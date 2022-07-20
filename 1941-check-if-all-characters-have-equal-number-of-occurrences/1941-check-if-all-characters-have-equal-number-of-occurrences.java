@@ -12,8 +12,7 @@ class Solution
             }
             else
             {
-                int value = map.get(str);
-                map.put(str, ++value);
+                map.put(str, map.get(str) + 1);
             }
         }
         int val = map.get(s.charAt(0));

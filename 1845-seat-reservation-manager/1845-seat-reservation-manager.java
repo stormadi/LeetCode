@@ -10,7 +10,7 @@ class SeatManager
     public int reserve() 
     {
         if(min.size() == 0) return count++;
-        return min.remove();
+        return min.poll();
     }
     public void unreserve(int seatNumber)
     {

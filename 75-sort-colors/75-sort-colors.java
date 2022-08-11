@@ -1,32 +1,29 @@
-class Solution 
+//Dutch flag algo
+class Solution
 {
     public void sortColors(int[] nums) 
     {
-        int countR = 0;
-        int countW = 0;
-        int countB = 0;
-        for(int i = 0; i < nums.length; i++)
+        int low = 0;
+        int mid = 0;
+        int high = nums.length-1;
+        int temp;
+        while(mid <= high)
         {
-            if(nums[i] == 0) countR++;
-            else if(nums[i] == 1) countW++;
-            else countB++;
-        }
-        for(int i = 0; i < nums.length; i++)
-        {
-            if(countR > 0)
+            switch(nums[mid])
             {
-                nums[i] = 0;
-                countR--;
-            }
-            else if(countW > 0)
-            {
-                nums[i] = 1;
-                countW--;
-            }
-            else
-            {
-                nums[i] = 2;
-                countB--;
+                case 0: temp = nums[low];
+                        nums[low] = nums[mid];
+                        nums[mid] = temp;
+                        low++;
+                        mid++;
+                        break;
+                case 1: mid++;
+                        break;
+                case 2: temp = nums[mid];
+                        nums[mid] = nums[high];
+                        nums[high] = temp;
+                        high--;
+                        break;
             }
         }
     }

@@ -1,3 +1,4 @@
+//DP solution but not optimal
 class Solution 
 {
     public int solve(int i, int j, int m, int n, int[][] matrix)

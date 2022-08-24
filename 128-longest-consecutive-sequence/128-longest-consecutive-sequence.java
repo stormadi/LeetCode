@@ -4,15 +4,15 @@ class Solution
     {
         int max = 0;
         Set<Integer> set = new HashSet<>();
-        for(int i = 0; i < nums.length; i++)
+        for(int num : nums)
         {
-            set.add(nums[i]);
+            set.add(num);
         }
-        for(int i = 0; i < nums.length; i++)
+        for(int num : nums)
         {
-            if(!set.contains(nums[i] - 1))
+            if(!set.contains(num - 1))
             {
-                int curr = nums[i];
+                int curr = num;
                 int streak = 1;
                 while(set.contains(curr+1))
                 {
